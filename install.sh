@@ -181,31 +181,7 @@ cd /home/${USER}
 echo
 sleep 5
 
-echo "Criando a pasta de backup"
-echo
-sudo rm -rf /opt/bkp
-sudo mkdir /opt/bkp
-sudo chown -R 1000:1000 /opt/bkp
-sudo chown -R 1000:1000 /mnt/incomplete
-echo
-sleep 5
-
-echo "Copiando os arquivos de backup para o cronjob."
-echo
-read -p ">>> Você vai usar gdrive? (y/n)" RESP
-if [ "$RESP" = "y" ]; then
-sudo cp /opt/handbrake-holtzflix/scripts/backup-gdrive.sh /opt/bkp/
-sudo chmod +x /opt/bkp/backup-gdrive.sh
-sudo cp /opt/handbrake-holtzflix/scripts/bkp-gdrive /etc/cron.d/
-else
-sudo cp /opt/handbrake-holtzflix/scripts/backup-tdrive.sh /opt/bkp/
-sudo chmod +x /opt/bkp/backup-tdrive.sh
-sudo cp /opt/handbrake-holtzflix/scripts/bkp-tdrive /etc/cron.d/
-echo
-sleep 1
-fi
-
-echo "Sucesso na cópia, backup configurado"
+echo "Todo o sistema está pronto."
 echo
 sleep 5
 
