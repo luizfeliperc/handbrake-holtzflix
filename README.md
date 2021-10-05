@@ -20,6 +20,6 @@ Adicione no final do arquivo o seguinte: seu_user ALL=(ALL) NOPASSWD: ALL
 
 sudo apt-get update && sudo apt upgrade -y
 sudo apt-get install git -y
-sudo rm -rf /opt/holtzflix-v2 && sudo git clone https://github.com/luizfeliperc/holtzflix-v2.git /opt/holtzflix-v2
-cd /opt/holtzflix-v2 && bash install.sh
+sudo rm -rf /opt/handbrake-holtzflix && sudo git clone https://github.com/luizfeliperc/handbrake-holtzflix.git /opt/handbrake-holtzflix
+cd /opt/handbrake-holtzflix && bash install.sh
 ```
