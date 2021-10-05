@@ -1,1 +1,0 @@
-30 2 * * Mon root bash /opt/bkp/backup-tdrive.sh > /dev/null 2>&1

@@ -1,1 +1,0 @@
-30 2 * * Sun root bash /opt/bkp/backup-gdrive.sh > /dev/null 2>&1
