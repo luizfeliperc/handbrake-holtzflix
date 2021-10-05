@@ -1,9 +1,10 @@
-Este script tem como finalidade a instalação do docker, docker-compose e todos os containers básicos para funcionamento de um servidor de streaming utilizando o rclone para transporte de arquivos juntamente com o mergerFS.
+Este script tem como finalidade a instalação do docker, docker-compose juntamente com o mergerFS para a utilização do Handbrake para conversão de arquivos com envio automatico para a nuvem.
 
 # Recomendações para instalação:
 
 - Ubuntu 16.04 & 18.04 & 20.04 LTS
-- RAM: Mínimo 4GB / Recomendado 8GB
+- RAM: Mínimo 2GB / Recomendado 8GB
+- Processador de preferencia com 4 núcleos ou maior.
 - Storage: Mínimo 200GB / Recomendado 500GB
 
 # Informações Importantes!
