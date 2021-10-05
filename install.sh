@@ -139,9 +139,13 @@ read -p ">>> Você vai usar gdrive? (y/n)" RESP
 if [ "$RESP" = "y" ]; then
 sudo cp /opt/handbrake-holtzflix/scripts/movegd.sh /opt/move/
 sudo chmod +x /opt/move/movegd.sh
+sudo cp /opt/handbrake-holtzflix/scripts/cloneclean.sh /opt/move/
+sudo chmod +x /opt/move/cloneclean.sh
 else
 sudo cp /opt/handbrake-holtzflix/scripts/movetd.sh /opt/move/
 sudo chmod +x /opt/move/movetd.sh
+sudo cp /opt/handbrake-holtzflix/scripts/cloneclean.sh /opt/move/
+sudo chmod +x /opt/move/cloneclean.sh
 echo
 sleep 1
 fi
