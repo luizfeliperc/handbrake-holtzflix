@@ -13,7 +13,7 @@ Este script tem como finalidade a instalação do Handbrake para conversão auto
 
 Não execute o procedimento usando o root. Crie um usuário e de permissão de sudo a ele!
 
-Antes de iniciar, você precisa criar as seguintes pastas em seu Drive ou Drive de equipe: Handbrake/output e Hanbrake/watch
+Antes de iniciar, você precisa criar as seguintes pastas em seu Drive ou Drive de equipe: Handbrake/output e Handbrake/watch
 
 ### Instalação
 ```sh
