@@ -41,7 +41,7 @@ div {
       <td width="100">&nbsp;</td>
 		<td width="100%" align="center">
 			<h1>
-				<strong style="color: #FFFFFF; font-family: Calibri; font-size: 48px; font-weight: bolder;">HoltzBlitz - Monitor de Upload<br>
+				<strong style="color: #FFFFFF; font-family: Calibri; font-size: 48px; font-weight: bolder;">HandBrake - Monitor de Upload<br>
 					<span style="color: #A9A9A9; font-size: 18px">As informações são atualizadas a cada 30 segundos</span>	
 					<br>
 				</strong>
