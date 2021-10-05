@@ -1,0 +1,41 @@
+#!/bin/bash
+# Title:      Service rclone para o gdrive
+# Authors:    Holtzmann
+# URL:        http://luitech.com.br
+################################################################################
+[Unit]
+Description=gdrive Daemon
+After=network-online.target
+
+[Service]
+Type=notify
+ExecStart=/usr/bin/rclone mount gdrive: /mnt/gdrive \
+--log-file=/mnt/logs/rclone-gdrive.log \
+--log-level INFO \
+--uid=1000 --gid=1000 --umask=002 \
+--allow-other \
+--bwlimit-file 16M \
+--dir-cache-time 5000h \
+--drive-pacer-min-sleep 10ms \
+--drive-pacer-burst 200 \
+--user-agent HoltzFlix \
+--drive-skip-gdocs \
+--poll-interval=10s \
+--vfs-cache-mode full \
+--cache-dir=/mnt/cache \
+--vfs-read-ahead=128M \
+--vfs-cache-poll-interval=15s \
+--vfs-cache-max-age 5000h \
+--vfs-cache-max-size 150G \
+--vfs-read-chunk-size 128M \
+--vfs-read-chunk-size-limit off \
+--buffer-size=16M \
+--use-mmap \
+--vfs-case-insensitive
+ExecStop=/bin/fusermount -uz /mnt/gdrive > /dev/null
+TimeoutSec=60
+User=1000
+Group=1000
+
+[Install]
+WantedBy=multi-user.target

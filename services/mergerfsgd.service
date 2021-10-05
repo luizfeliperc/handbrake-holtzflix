@@ -1,0 +1,23 @@
+#!/bin/bash
+# Title:      Mergerfs para o gdrive
+# Authors:    Holtzmann
+# URL:        http://luitech.com.br
+################################################################################
+[Unit]
+Description=Google Drive mergerfs mount
+Wants=network-online.target
+Requires=gdrive.service
+After=gdrive.service
+
+[Service]
+Type=forking
+User=1000
+Group=1000
+ExecStart=/usr/bin/mergerfs /mnt/move=RW:/mnt/gdrive=NC:/mnt/downloads=RW: /mnt/unionfs -o rw,use_ino,allow_other,func.getattr=newest,category.action=all,category.create=ff,cache.files=partial,dropcacheonclose=true
+ExecStop=/bin/fusermount -uzq /mnt/unionfs
+KillMode=process
+RemainAfterExit=yes
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

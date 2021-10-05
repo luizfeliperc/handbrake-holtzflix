@@ -1,0 +1,18 @@
+#!/bin/bash
+# Title:      Service rclone para o tdrive
+# Authors:    Holtzmann
+# URL:        http://luitech.com.br
+################################################################################
+[Unit]
+Description='Serviço de envio dos arquivos para a nuvem'
+After=multi-user.target network-online.target
+
+[Service]
+Type=simple
+User=1000
+Group=1000
+ExecStart=/bin/bash /opt/move/movetd.sh
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
