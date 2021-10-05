@@ -4,6 +4,8 @@
 # URL:        http://luitech.com.br
 ################################################################################
 
+source /opt/move/cloneclean.sh
+
 if pidof -o %PPID -x "$0"; then
     exit 1
 fi
@@ -11,7 +13,7 @@ fi
 hdpath="/mnt"
 while true; do
 
-    useragent="HoltzFlix"
+    useragent="Handbrake"
     bwlimit="20M"
     vfs_dcs="128M"
     let "cyclecount++"
@@ -23,24 +25,25 @@ while true; do
         echo "---Inicio do ciclo $cyclecount - $p: $(date "+%Y-%m-%d %H:%M:%S")---" >>/mnt/logs/movetd.log
         echo "Checando arquivos para upload..." >>/mnt/logs/movetd.log
 
-    rsync "$hdpath/downloads/" "$hdpath/move/" \
-        -aq --remove-source-files --link-dest="$hdpath/downloads/" \
+    rsync "$hdpath/Handbrake/" "$hdpath/move/" \
+        -aq --remove-source-files --link-dest="$hdpath/Handbrake/" \
         --exclude="**_HIDDEN~" --exclude=".unionfs/**" \
         --exclude="**partial~" --exclude=".unionfs-fuse/**" \
-        --exclude=".fuse_hidden**" --exclude="**.grab/**" \
+        --exclude=".fuse_hidden**" --exclude="**.grab/**" --exclude="\.**" \
         --exclude="**qbittorrent**" --exclude="**rutorrent**"
 
 
     if [[ $(find "$hdpath/move" -type f | wc -l) -gt 0 ]]; then
 
-        rclone move "$hdpath/move/" "tdrive:/" \
+        rclone moveto "$hdpath/move" "tdrive:/Handbrake/" \
             --config=/home/${USER}/.config/rclone/rclone.conf \
             --log-file=/mnt/logs/movetd.log \
             --log-level=INFO --stats=5s --stats-file-name-length=0 \
             --max-size=300G \
             --tpslimit=2 \
             --checkers=2 \
-            --min-age 1h \
+            --min-age 1m \
+            --min-size 1K \
             --no-traverse \
             --fast-list \
             --max-transfer 750G \
@@ -50,7 +53,7 @@ while true; do
             --exclude="**_HIDDEN~" --exclude=".unionfs/**" \
             --exclude="**partial~" --exclude=".unionfs-fuse/**" \
             --exclude="**sabnzbd**" --exclude="**nzbget**" \
-            --exclude="**qbittorrent**" --exclude="**rutorrent**" \
+            --exclude="**qbittorrent**" --exclude="**rutorrent**" --exclude="\.**" \
             --exclude="**ignore**" --exclude="**inProgress**"
 
          echo "Upload completo." >>/mnt/logs/movetd.log
@@ -62,5 +65,5 @@ while true; do
     echo "$(tail -n 200 /mnt/logs/movetd.log)" >/mnt/logs/movetd.log
 
     sleep 30
-
+    cloneclean
 done
