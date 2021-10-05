@@ -18,7 +18,7 @@ ExecStart=/usr/bin/rclone mount gdrive: /mnt/gdrive \
 --dir-cache-time 5000h \
 --drive-pacer-min-sleep 10ms \
 --drive-pacer-burst 200 \
---user-agent HoltzFlix \
+--user-agent HandBrake \
 --drive-skip-gdocs \
 --poll-interval=10s \
 --vfs-cache-mode full \
@@ -26,7 +26,7 @@ ExecStart=/usr/bin/rclone mount gdrive: /mnt/gdrive \
 --vfs-read-ahead=128M \
 --vfs-cache-poll-interval=15s \
 --vfs-cache-max-age 5000h \
---vfs-cache-max-size 150G \
+--vfs-cache-max-size 50G \
 --vfs-read-chunk-size 128M \
 --vfs-read-chunk-size-limit off \
 --buffer-size=16M \

@@ -71,26 +71,26 @@ echo
 sleep 3
 read -p ">>> Você vai usar gdrive? (y/n)" RESP
 if [ "$RESP" = "y" ]; then
-sudo mkdir /mnt/cache /mnt/gdrive /mnt/logs /mnt/downloads /mnt/incomplete /mnt/unionfs /mnt/move /mnt/ui
+sudo mkdir -p /mnt/cache /mnt/gdrive /mnt/logs /mnt/unionfs /mnt/move /mnt/ui /mnt/ /mnt/Handbrake/output /mnt/hb/storage
 sudo chown -R 1000:1000 /mnt/cache
 sudo chown -R 1000:1000 /mnt/gdrive
 sudo chown -R 1000:1000 /mnt/logs
-sudo chown -R 1000:1000 /mnt/downloads
 sudo chown -R 1000:1000 /mnt/unionfs
 sudo chown -R 1000:1000 /mnt/move
-sudo chown -R 1000:1000 /mnt/incomplete
 sudo chown -R 1000:1000 /mnt/ui
+sudo chown -R 1000:1000 /mnt/hb
+sudo chown -R 1000:1000 /mnt/Handbrake
 
 else
-sudo mkdir /mnt/cache /mnt/tdrive /mnt/logs /mnt/downloads /mnt/incomplete /mnt/unionfs /mnt/move /mnt/ui
+sudo mkdir /mnt/cache /mnt/tdrive /mnt/logs /mnt/unionfs /mnt/move /mnt/ui /mnt/Handbrake/output /mnt/hb/storage
 sudo chown -R 1000:1000 /mnt/cache
 sudo chown -R 1000:1000 /mnt/tdrive
 sudo chown -R 1000:1000 /mnt/logs
-sudo chown -R 1000:1000 /mnt/downloads
 sudo chown -R 1000:1000 /mnt/unionfs
 sudo chown -R 1000:1000 /mnt/move
-sudo chown -R 1000:1000 /mnt/incomplete
 sudo chown -R 1000:1000 /mnt/ui
+sudo chown -R 1000:1000 /mnt/hb
+sudo chown -R 1000:1000 /mnt/Handbrake
 echo
 sleep 5
 fi
@@ -100,13 +100,13 @@ echo
 sleep 3
 read -p ">>> Você vai usar gdrive? (y/n)" RESP
 if [ "$RESP" = "y" ]; then
-sudo cp /opt/holtzflix-v2/services/gdrive.service /etc/systemd/system/
-sudo cp /opt/holtzflix-v2/services/mergerfsgd.service /etc/systemd/system/
-sudo cp /opt/holtzflix-v2/services/movegd.service /etc/systemd/system/
+sudo cp /opt/handbrake-holtzflix/services/gdrive.service /etc/systemd/system/
+sudo cp /opt/handbrake-holtzflix/services/mergerfsgd.service /etc/systemd/system/
+sudo cp /opt/handbrake-holtzflix/services/movegd.service /etc/systemd/system/
 else 
-sudo cp /opt/holtzflix-v2/services/tdrive.service /etc/systemd/system/
-sudo cp /opt/holtzflix-v2/services/mergerfstd.service /etc/systemd/system/
-sudo cp /opt/holtzflix-v2/services/movetd.service /etc/systemd/system/
+sudo cp /opt/handbrake-holtzflix/services/tdrive.service /etc/systemd/system/
+sudo cp /opt/handbrake-holtzflix/services/mergerfstd.service /etc/systemd/system/
+sudo cp /opt/handbrake-holtzflix/services/movetd.service /etc/systemd/system/
 echo
 sleep 5
 fi
@@ -129,7 +129,7 @@ sleep 5
 
 echo "Copiando os arquivos da UI"
 echo
-sudo cp /opt/holtzflix-v2/ui/index.php /mnt/ui/
+sudo cp /opt/handbrake-holtzflix/ui/index.php /mnt/ui/
 echo
 sleep 5
 
@@ -137,10 +137,10 @@ echo "Copiando os scritps de movimentação dos arquivos."
 echo
 read -p ">>> Você vai usar gdrive? (y/n)" RESP
 if [ "$RESP" = "y" ]; then
-sudo cp /opt/holtzflix-v2/scripts/movegd.sh /opt/move/
+sudo cp /opt/handbrake-holtzflix/scripts/movegd.sh /opt/move/
 sudo chmod +x /opt/move/movegd.sh
 else
-sudo cp /opt/holtzflix-v2/scripts/movetd.sh /opt/move/
+sudo cp /opt/handbrake-holtzflix/scripts/movetd.sh /opt/move/
 sudo chmod +x /opt/move/movetd.sh
 echo
 sleep 1
@@ -190,13 +190,13 @@ echo "Copiando os arquivos de backup para o cronjob."
 echo
 read -p ">>> Você vai usar gdrive? (y/n)" RESP
 if [ "$RESP" = "y" ]; then
-sudo cp /opt/holtzflix-v2/scripts/backup-gdrive.sh /opt/bkp/
+sudo cp /opt/handbrake-holtzflix/scripts/backup-gdrive.sh /opt/bkp/
 sudo chmod +x /opt/bkp/backup-gdrive.sh
-sudo cp /opt/holtzflix-v2/scripts/bkp-gdrive /etc/cron.d/
+sudo cp /opt/handbrake-holtzflix/scripts/bkp-gdrive /etc/cron.d/
 else
-sudo cp /opt/holtzflix-v2/scripts/backup-tdrive.sh /opt/bkp/
+sudo cp /opt/handbrake-holtzflix/scripts/backup-tdrive.sh /opt/bkp/
 sudo chmod +x /opt/bkp/backup-tdrive.sh
-sudo cp /opt/holtzflix-v2/scripts/bkp-tdrive /etc/cron.d/
+sudo cp /opt/handbrake-holtzflix/scripts/bkp-tdrive /etc/cron.d/
 echo
 sleep 1
 fi

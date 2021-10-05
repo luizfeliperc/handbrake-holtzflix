@@ -13,7 +13,7 @@ After=tdrive.service
 Type=forking
 User=1000
 Group=1000
-ExecStart=/usr/bin/mergerfs /mnt/move=RW:/mnt/tdrive=NC:/mnt/downloads=RW: /mnt/unionfs -o rw,use_ino,allow_other,func.getattr=newest,category.action=all,category.create=ff,cache.files=partial,dropcacheonclose=true
+ExecStart=/usr/bin/mergerfs /mnt/move=RW:/mnt/tdrive=NC: /mnt/unionfs -o rw,use_ino,allow_other,func.getattr=newest,category.action=all,category.create=ff,cache.files=partial,dropcacheonclose=true
 ExecStop=/bin/fusermount -uzq /mnt/unionfs
 KillMode=process
 RemainAfterExit=yes
