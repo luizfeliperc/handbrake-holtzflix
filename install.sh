@@ -111,11 +111,11 @@ echo
 sleep 5
 fi
 
-echo "ATENÇÃO - Tire o comentário da linha allow_other do fuse.conf"
+echo "Retirando o comentário da linha allow_other do fuse.conf"
 echo
 sleep 10
 echo
-sudo nano /etc/fuse.conf
+sudo sed -i 's/#user_allow_other/user_allow_other/g' /etc/fuse.conf
 echo
 sleep 5
 

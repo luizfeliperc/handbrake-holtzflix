@@ -13,7 +13,15 @@ Este script tem como finalidade a instalação do Handbrake para conversão auto
 
 Não execute o procedimento usando o root. Crie um usuário e de permissão de sudo a ele!
 
-Antes de iniciar, você precisa criar as seguintes pastas em seu Drive ou Drive de equipe: Handbrake/output e Handbrake/watch
+# Passos a seguir antes da primeira conversão:
+
+- Criar as pastas em seu Drive ou Drive de equipe: Handbrake/output e Handbrake/watch
+- Dentro do Handbrake, no meu suspenso você deve clicar em Presets / Imports. Após isto, navegar até a pasta storage e selecionar o preset já disponivel. 
+- Após fazer isto, clique novamente em Set Defalt e ele ficará salvo para as próximas conversões manual.
+- Para a conversão automática, que é o foco do script, vc deve clicar em Save As, selecionar a categoria General e salvar com o seguinte nome: mkv-1080p, selecione Defalt Preset e clique em OK.
+
+
+
 
 ### Instalação
 ```sh
@@ -27,3 +35,9 @@ sudo apt-get install git -y
 sudo rm -rf /opt/handbrake-holtzflix && sudo git clone https://github.com/luizfeliperc/handbrake-holtzflix.git /opt/handbrake-holtzflix
 cd /opt/handbrake-holtzflix && bash install.sh
 ```
+
+# Informações sobre o sistema
+Após a instalação, os serviços ficarão disponiveis nos endereços abaixo.
+- Handbrake: http://localhost:5888
+- Monitor: http://localhost:8555
+
