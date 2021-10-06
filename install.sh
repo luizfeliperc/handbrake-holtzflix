@@ -8,7 +8,7 @@ sleep 5
 
 echo "Instalando programas necessários"
 echo
-sudo apt-get install htop bmon screenfetch zsh curl git tmux screen zip unzip curl unionfs-fuse fuse nano -y
+sudo apt-get install htop bmon screenfetch zsh curl git tzdata dialog locales wget apt-utils tmux screen zip unzip curl unionfs-fuse fuse nano -y
 echo
 sleep 5
 
