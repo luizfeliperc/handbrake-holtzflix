@@ -15,7 +15,7 @@ Não execute o procedimento usando o root. Crie um usuário e de permissão de s
 
 # Passos a seguir antes da primeira conversão:
 
-- Criar as pastas em seu Drive ou Drive de equipe: Handbrake/output e Handbrake/watch
+- Criar as seguintes pastas em seu Drive ou Drive de equipe: Handbrake/output e Handbrake/watch
 - Dentro do Handbrake, no meu suspenso você deve clicar em Presets / Imports. Após isto, navegar até a pasta storage e selecionar o preset já disponivel. 
 - Após fazer isto, clique novamente em Set Defalt e ele ficará salvo para as próximas conversões manual.
 - Para a conversão automática, que é o foco do script, vc deve clicar em Save As, selecionar a categoria General e salvar com o seguinte nome: mkv-1080p, selecione Defalt Preset e clique em OK.
