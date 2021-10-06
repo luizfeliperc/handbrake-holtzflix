@@ -82,7 +82,7 @@ sudo chown -R 1000:1000 /mnt/hb
 sudo chown -R 1000:1000 /mnt/Handbrake
 
 else
-sudo mkdir /mnt/cache /mnt/tdrive /mnt/logs /mnt/unionfs /mnt/move /mnt/ui /mnt/Handbrake/output /mnt/hb/storage
+sudo mkdir -p /mnt/cache /mnt/tdrive /mnt/logs /mnt/unionfs /mnt/move /mnt/ui /mnt/Handbrake/output /mnt/hb/storage
 sudo chown -R 1000:1000 /mnt/cache
 sudo chown -R 1000:1000 /mnt/tdrive
 sudo chown -R 1000:1000 /mnt/logs
