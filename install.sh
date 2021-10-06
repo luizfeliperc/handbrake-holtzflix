@@ -119,7 +119,9 @@ sudo nano /etc/fuse.conf
 echo
 sleep 5
 
-echo "Criando a pasta Move"
+echo "Criando a pasta Move para envio dos arquivos automatico para a nuvem"
+echo
+sleep 5
 echo
 sudo rm -rf /opt/move
 sudo mkdir /opt/move
@@ -130,6 +132,12 @@ sleep 5
 echo "Copiando os arquivos da UI"
 echo
 sudo cp /opt/handbrake-holtzflix/ui/index.php /mnt/ui/
+echo
+sleep 5
+
+echo "Copiando o preset do Hanbdrake para a pasta local"
+echo
+sudo cp /opt/handbrake-holtzflix/scripts/mkv-1080p.json /mnt/hb/storage
 echo
 sleep 5
 
