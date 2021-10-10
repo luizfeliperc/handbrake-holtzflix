@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script para instalação dos containers básicos para Streaming com utilização do Rclone com cache VFS FULL
+# Script para instalação do Handbrake utilizando o rclone para montagem e transporte de arquivos para a nuvem.
 
 echo "Atualizando pacotes"
 sudo apt update -y && sudo apt dist-upgrade -y
