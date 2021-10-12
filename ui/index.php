@@ -4,7 +4,7 @@
 <meta name="robots" content="noindex" content="nofollow” />
 <meta http-equiv="Cache-Control" content="no-cache">
 <meta name="copyright" content="pgblitz.com" />
-<title>HoltzBlitz - Monitor de Upload</title>
+<title>HandBrake - Monitor de Upload</title>
 <meta name="viewport" content="width=device-width, initial-scale=0.5">
 <link rel="icon" type="image/png" href="https://i.ibb.co/D8K57Vj/1200px-Google-Drive-icon-2020-svg.png" sizes="32x32">
 <style type="text/css">
