@@ -9,6 +9,8 @@ services:
           - AUTOMATED_CONVERSION_FORMAT=mkv
           - AUTOMATED_CONVERSION_NON_VIDEO_FILE_ACTION=copy
           - AUTOMATED_CONVERSION_OUTPUT_SUBDIR=SAME_AS_SRC
+          - SECURE_CONNECTION=1
+          - VNC_PASSWORD
           ports:
           - 5800:5800
           volumes:
