@@ -189,8 +189,9 @@ cd /home/${USER}
 echo
 sleep 5
 
-echo "Todo o sistema está pronto."
+echo "Crie uma senha para acesso ao Handbrake via web."
 echo
+sudo nano /opt/appconfig/handbrake/.vncpass_clear
 sleep 5
 
 echo "Reiniciando os containers"
@@ -199,5 +200,10 @@ cd ~/
 sudo docker-compose restart
 echo
 sleep 5
+
+echo "Todo o sistema está pronto."
+echo
+sleep 5
+
 echo "Instalação Completa. Reinicie o computador para aplicar todas as configurações"
 exit
