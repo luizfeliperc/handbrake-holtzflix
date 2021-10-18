@@ -5,7 +5,7 @@ services:
           container_name: handbrake
           environment:
           - TZ=America/Sao_Paulo
-          - AUTOMATED_CONVERSION_PRESET=mkv-1080p
+          - AUTOMATED_CONVERSION_PRESET=Holtz/mkv-2pass-eac3-3000k
           - AUTOMATED_CONVERSION_FORMAT=mkv
           - AUTOMATED_CONVERSION_NON_VIDEO_FILE_ACTION=copy
           - AUTOMATED_CONVERSION_OUTPUT_SUBDIR=SAME_AS_SRC

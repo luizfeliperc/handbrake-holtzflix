@@ -137,7 +137,7 @@ sleep 5
 
 echo "Copiando o preset do Hanbdrake para a pasta local"
 echo
-sudo cp /opt/handbrake-holtzflix/scripts/mkv-1080p.json /mnt/hb/storage
+sudo cp /opt/handbrake-holtzflix/scripts/mkv-2pass-eac3-3000k.json /mnt/hb/storage
 echo
 sleep 5
 
