@@ -35,7 +35,7 @@ while true; do
 
     if [[ $(find "$hdpath/move" -type f | wc -l) -gt 0 ]]; then
 
-        rclone moveto "$hdpath/move" "tdrive:/Handbrake/" \
+        rclone move "$hdpath/move" "tdrive:/Handbrake/" \
             --config=/home/${USER}/.config/rclone/rclone.conf \
             --log-file=/mnt/logs/movetd.log \
             --log-level=INFO --stats=5s --stats-file-name-length=0 \
@@ -43,6 +43,7 @@ while true; do
             --tpslimit=2 \
             --checkers=2 \
             --min-age 1m \
+            --delete-empty-src-dirs \
             --min-size 1K \
             --no-traverse \
             --fast-list \
